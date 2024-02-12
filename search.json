@@ -14,6 +14,34 @@
     "text": "As I was writing a paper for one of my classes, I turned to ChatGPT for help with synonyms. I used to refer to the thesaurus, but the ease and amount of options made ChatGPT the obvious resource to use… Or so I thought.\nChatGPT in the past allowed me to input the most simple request, and it would immediately output what I was looking for. But for some reason, the day I went to request a synonym for “regarding”, the LLM was stuck!\n\n\n\nregarding synonym\n\n\n\nCould you please provide more context or specify the word you need a synonym for? This will help me provide a more accurate suggestion.\n\nOf course, I understood that ChatGPT was processing an incomplete request to do something with the word synonym from the conversation above, but I was shocked that its first instinct wasn’t just outputting the synonym. So then I typed…\n\n\n\n\nsynonym for regarding\n\n\n\nA synonym for “regarding” could be “concerning,” “relating to,” “pertaining to,” “in relation to,” or “with respect to.” Each of these alternatives can be used interchangeably with “regarding” to indicate the subject of discussion or consideration.\n\nJust an interesting experience I had regarding the order of words using LLMs! For us native English speakers, the ordering shouldn’t make a difference (especially when inflections, tone, and context are implied), but it’s hard for an LLM to guess our interpretation 100% of the time. Remember to prompt your LLM as accurately and direct as possible for the best results!"
   },
   {
+    "objectID": "posts/3rd_post/index.html",
+    "href": "posts/3rd_post/index.html",
+    "title": "ROYGBIV + AI?",
+    "section": "",
+    "text": "There has been a lot of online ruckus about how AI is stifling the creation of art and originality. However, I beg to differ. Don’t get me wrong, I don’t believe that AI should be used to write full movie scripts or to create paintings that belong in the Louvre, but as I thought about some of the possibilities we can do with LLMs, I was intrigued. So I decided to see just how much creative damage I could do– beginning with creating a new color.\nI start with asking Bing’s Copilot:\ncreate a new color\nThe LLM responds very kindly giving me lots of imaginative options to choose from:\nCertainly! Creating a new color can be a delightful and imaginative process. While I can’t mix actual pigments, I can certainly help you conceptualize a unique color. Let’s embark on this colorful journey together!\n\nSunset Coral: Imagine a warm blend of rosy pink and golden orange, reminiscent of a vibrant sunset over the ocean. This color exudes warmth, energy, and a touch of romance.\nStardust Teal: Picture a deep, mystical shade that combines the richness of midnight blue with a hint of emerald green.\nMoonstone Lavender: Close your eyes and envision a soft, ethereal hue—pale lavender with a subtle shimmer, like moonlight dancing on water. It’s calming, dreamy, and perfect for serene spaces.\nGalactic Plum: Take the intensity of royal purple and infuse it with cosmic energy. This color feels otherworldly, like a distant galaxy swirling in shades of plum and indigo.\n\nRemember, these colors exist only in our imagination, but you can play with them in your mind or even use them as inspiration for your next creative project! 🌈✨\nI was the most curious about Stardust Teal and Moonstone Lavender, but I couldn’t help but think that I’ve seen very similar variations of these colors already… meaning it didn’t do it’s job in creating a new color. So I decided to find a color that I thought matched closest to the description and see how different it is the what Copilot created for me."
+  },
+  {
+    "objectID": "posts/3rd_post/index.html#closing-remarks",
+    "href": "posts/3rd_post/index.html#closing-remarks",
+    "title": "ROYGBIV + AI?",
+    "section": "Closing Remarks",
+    "text": "Closing Remarks\nIt would be interesting to see how different Copilot is to Dall-E 3 in interpreting color descriptions, but if Dall-E 3 and I agree for 2/2, then I think Copilot must be pretty similar as well.\nAfter all of this, I think it’s important to note that I was not blown away or shocked by either of these colors, and it’s because I have seen them before. This means that AI cannot create new colors… at least, not with the prompt that I supplied it with this time.\nThanks for tuning in!\nEmmy"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this blog I’m having fun learning about LLM systems and I’m writing here to discuss my observations !!!!!"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "My Explorations with LLMs (come along for a fun ride!)",
+    "section": "",
+    "text": "ROYGBIV + AI?\n\n\n\n\n\n\nLLMs\n\n\nprompting\n\n\ncreative\n\n\n\nLLMs claim they can create new colors. But can they really?\n\n\n\n\n\nFeb 12, 2024\n\n\nEmmy Keogh\n\n\n\n\n\n\n\n\n\n\n\n\nMy first post!\n\n\n\n\n\n\nLLMs\n\n\nprompting\n\n\nlogic\n\n\n\nHopefully this works! I can’t wait to write on this blog site.\n\n\n\n\n\nFeb 2, 2024\n\n\nEmmy\n\n\n\n\n\n\n\n\n\n\n\n\nA test post\n\n\n\n\n\n\nLLMs\n\n\nprompting\n\n\nlogic\n\n\n\nAn example post from a Jupyter notebook\n\n\n\n\n\nFeb 2, 2024\n\n\nAn LLM User\n\n\n\n\n\n\n\n\n\n\n\n\nOrder Matters!\n\n\n\n\n\n\nLLMs\n\n\nprompting\n\n\nlogic\n\n\n\nLLMs need a specific order of words to register certain actions.\n\n\n\n\n\nFeb 2, 2024\n\n\nEmmy Keogh\n\n\n\n\n\n\nNo matching items"
+  },
+  {
     "objectID": "posts/1st_post/index.html",
     "href": "posts/1st_post/index.html",
     "title": "My first post!",
@@ -26,20 +54,6 @@
     "title": "My first post!",
     "section": "",
     "text": "for idx in range(10):\n    print('Read Me')\n\nRead Me\nRead Me\nRead Me\nRead Me\nRead Me\nRead Me\nRead Me\nRead Me\nRead Me\nRead Me"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "My Explorations with LLMs (come along for a fun ride!)",
-    "section": "",
-    "text": "My first post!\n\n\n\n\n\n\nLLMs\n\n\nprompting\n\n\nlogic\n\n\n\nHopefully this works! I can’t wait to write on this blog site.\n\n\n\n\n\nFeb 2, 2024\n\n\nEmmy\n\n\n\n\n\n\n\n\n\n\n\n\nA test post\n\n\n\n\n\n\nLLMs\n\n\nprompting\n\n\nlogic\n\n\n\nAn example post from a Jupyter notebook\n\n\n\n\n\nFeb 2, 2024\n\n\nAn LLM User\n\n\n\n\n\n\n\n\n\n\n\n\nOrder Matters!\n\n\n\n\n\n\nLLMs\n\n\nprompting\n\n\nlogic\n\n\n\nLLMs need a specific order of words to register certain actions.\n\n\n\n\n\nFeb 2, 2024\n\n\nEmmy Keogh\n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "About this blog I’m having fun learning about LLM systems and I’m writing here to discuss my observations !!!!!"
   },
   {
     "objectID": "posts/000_test_post/index.html",

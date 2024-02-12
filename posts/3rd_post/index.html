@@ -6,11 +6,11 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="An LLM User">
-<meta name="dcterms.date" content="2024-02-02">
-<meta name="description" content="An example post from a Jupyter notebook">
+<meta name="author" content="Emmy Keogh">
+<meta name="dcterms.date" content="2024-02-12">
+<meta name="description" content="LLMs claim they can create new colors. But can they really?">
 
-<title>My Explorations with LLMs - A test post</title>
+<title>My Explorations with LLMs - ROYGBIV + AI?</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -116,16 +116,16 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">A test post</h1>
+      <h1 class="title">ROYGBIV + AI?</h1>
                   <div>
         <div class="description">
-          An example post from a Jupyter notebook
+          LLMs claim they can create new colors. But can they really?
         </div>
       </div>
                           <div class="quarto-categories">
                 <div class="quarto-category">LLMs</div>
                 <div class="quarto-category">prompting</div>
-                <div class="quarto-category">logic</div>
+                <div class="quarto-category">creative</div>
               </div>
                   </div>
   </div>
@@ -136,14 +136,14 @@ ul.task-list li input[type="checkbox"] {
       <div>
       <div class="quarto-title-meta-heading">Author</div>
       <div class="quarto-title-meta-contents">
-               <p>An LLM User </p>
+               <p>Emmy Keogh </p>
             </div>
     </div>
       
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">February 2, 2024</p>
+        <p class="date">February 12, 2024</p>
       </div>
     </div>
     
@@ -162,56 +162,54 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<section id="a-visualization-problem-for-llms" class="level2">
-<h2 class="anchored" data-anchor-id="a-visualization-problem-for-llms">A visualization problem for LLMs</h2>
-<ul>
-<li>Read the following and see if you can answer the question:</li>
-</ul>
-<blockquote class="blockquote">
-<p>There are three boxes in a stack. A pink one, a purple one and a green one. The pink one is in the middle of the stack with the purple below it. What is the color of the box on the bottom of the stack?</p>
-</blockquote>
-<p>Most likely you answered <strong>purple</strong>…</p>
-<p>But it is possible you first said <strong>green</strong> (don’t worry if you did it is quite a common response!)</p>
-<section id="how-do-we-do-it" class="level3">
-<h3 class="anchored" data-anchor-id="how-do-we-do-it">How do we do it?</h3>
-<p>It’s a verbal visual problem that requires some deliberation and most likely for us to create a visual image of a stack of boxes as a reasoning aid.</p>
-<p>Notice also the complexity of the language used in the prompt to describe the scene. The use of natural language as opposed to a formal/logical calculus does hold the potential for ambiguity (multiple interpretations) and inexactness. However, it is the most normal/natural, efficient and broadly accessible way of communicating such information.</p>
-<p><strong>Notice</strong> 1. The use of <em>anaphor</em> or <em>reference</em>. - <code>Three BOXES -&gt; a pink/purple/green ONE</code> as opposed to <code>a pink box, a purple box and a green box</code>. - <code>The PINK ONE is in the middle ... the purple</code> {BOX} <code>below IT</code> {the pink box}</p>
-<pre><code>We tend to try and avoid this kind of repetition to make our speech more coherent.</code></pre>
-<ol start="2" type="1">
-<li>Although the description in language may not be entirely concise, there is no real ambiguity as to how the boxes can be arranged. It must be: | Box | Stack position | | — | — | | GREEN | top | | PINK | middle | | PURPLE | bottom |</li>
+<section id="can-llms-create-new-colors" class="level3">
+<h3 class="anchored" data-anchor-id="can-llms-create-new-colors">Can LLMs Create New Colors?</h3>
+<p>There has been a lot of online ruckus about how AI is stifling the creation of art and originality. However, I beg to differ. Don’t get me wrong, I don’t believe that AI should be used to write full movie scripts or to create paintings that belong in the Louvre, but as I thought about some of the possibilities we can do with LLMs, I was intrigued. So I decided to see just how much creative damage I could do– beginning with creating a new color.</p>
+<p>I start with asking Bing’s Copilot:</p>
+<p><strong><em>create a new color</em></strong></p>
+<p>The LLM responds very kindly giving me lots of imaginative options to choose from:</p>
+<p><strong><em>Certainly! Creating a new color can be a delightful and imaginative process. While I can’t mix actual pigments, I can certainly help you conceptualize a unique color. Let’s embark on this colorful journey together!</em></strong></p>
+<ol type="1">
+<li><strong><em>Sunset Coral: Imagine a warm blend of rosy pink and golden orange, reminiscent of a vibrant sunset over the ocean. This color exudes warmth, energy, and a touch of romance.</em></strong></li>
+<li><strong><em>Stardust Teal: Picture a deep, mystical shade that combines the richness of midnight blue with a hint of emerald green.</em></strong></li>
+<li><strong><em>Moonstone Lavender: Close your eyes and envision a soft, ethereal hue—pale lavender with a subtle shimmer, like moonlight dancing on water. It’s calming, dreamy, and perfect for serene spaces.</em></strong></li>
+<li><strong><em>Galactic Plum: Take the intensity of royal purple and infuse it with cosmic energy. This color feels otherworldly, like a distant galaxy swirling in shades of plum and indigo.</em></strong></li>
 </ol>
+<p><strong><em>Remember, these colors exist only in our imagination, but you can play with them in your mind or even use them as inspiration for your next creative project! 🌈✨</em></strong></p>
+<p>I was the most curious about Stardust Teal and Moonstone Lavender, but I couldn’t help but think that I’ve seen very similar variations of these colors already… meaning it didn’t do it’s job in creating a new color. So I decided to find a color that I thought matched closest to the description and see how different it is the what Copilot created for me.</p>
 </section>
-<section id="how-do-llms-response-to-the-prompt" class="level3">
-<h3 class="anchored" data-anchor-id="how-do-llms-response-to-the-prompt">How do LLMs response to the prompt?</h3>
-<p><strong>GPT3.5 Turbo</strong></p>
-<p><img src="gpt3-5.png" width="50%"></p>
-<p>Had some difficulties and answered <strong>green</strong></p>
-<p><strong>Llama2 (chat 7B version)</strong></p>
-<p><img src="llama2-chat7b.png" width="50%"></p>
-<ul>
-<li>Answered correctly (<strong>purple</strong>) and used some so-called <em>chain-of-thought</em> reasoning</li>
-</ul>
-<p><strong>Bing Chat (MS Co-pilot)</strong></p>
-<p>This LLM is GPT4 with some Microsoft specific tuning and RAG (search) additions.</p>
-<p>It get’s it correct:</p>
-<blockquote class="blockquote">
-<p>The color of the box on the bottom of the stack is purple. This is because the purple box is below the pink one, which is in the middle of the stack. Therefore, the purple box must be the lowest one. 🟪</p>
-</blockquote>
-<p>But when you follow up and ask it to create visual representation of the box arrangement</p>
-<blockquote class="blockquote">
-<p>PROMPT: Can you create a visual representation of how the boxes are arranged?</p>
-</blockquote>
-<p>It responds</p>
-<blockquote class="blockquote">
-<p>RESPONSE: Sure, I’ll try to create that. Here is a visual representation of how the boxes are arranged:</p>
-</blockquote>
-<p>And uses DALL-E3 to create 4 different attempts at a visual representation:</p>
-<p><img src="boxes.png" class="img-fluid"></p>
-<p><strong>NONE OF WHICH ARE CORRECT!!!</strong></p>
+<section id="my-stardust-teal" class="level3">
+<h3 class="anchored" data-anchor-id="my-stardust-teal">“My” Stardust teal</h3>
+<p>I imagine Stardust teal as a combination of all the colors in the sky of the northern lights. This is the inspo picture that I think of:</p>
+<p><img src="lights.png" width="50%"></p>
+</section>
+<section id="dall-e-3s-stardust-teal" class="level3">
+<h3 class="anchored" data-anchor-id="dall-e-3s-stardust-teal">Dall-E 3’s Stardust Teal</h3>
+<p>** Unfortunately, Copilot (which has always been finicky on my computer) said that it would not create images on a work account i.e.&nbsp;my school email, and since I don’t have a different Microsoft account, I can no longer use Copilot for images. No worries though the technology that creates images in Copilot is called Dall-E 3 and I found that on a separate site! Carry on!</p>
+<p><img src="onepic.png" width="50%"></p>
+<p><img src="twopic.png" width="50%"></p>
+<p>Very interestingly, the LLM did exactly what I would have done without me prompting it to. It went out of it’s way to not only give me it’s color, but also show me it’s inspiration for said color.</p>
+<p>This got me excited to see if I could accurately guess the process for the next color.</p>
+</section>
+<section id="my-moonstone-lavender" class="level3">
+<h3 class="anchored" data-anchor-id="my-moonstone-lavender">“My” Moonstone Lavender</h3>
+<p><img src="lavendar.png" width="50%"></p>
+<p>This may be an odd example to pull from, but the bottom of this dress reminds of of the description from Copilot. This time around I do not think Dall-E 3 will similarly pull from an anime app ad, but this is the color that I imagine Dall-E 3 will be similar to.</p>
+</section>
+<section id="dall-e-3s-moonstone-lavender" class="level3">
+<h3 class="anchored" data-anchor-id="dall-e-3s-moonstone-lavender">Dall-E 3’s Moonstone Lavender</h3>
+<p><img src="pic3.png" width="50%"></p>
+<p><img src="pic4.png" width="50%"></p>
+<p>Something interesting about Dall-E 3 is that it creates a product/reason for being along with the color. For Stardust Teal, it was nail polish, and for Moonstone Lavender, it’s some lotion. So no dress to match my prediction this time, but the color did turn out very similar.</p>
+</section>
+<section id="closing-remarks" class="level2">
+<h2 class="anchored" data-anchor-id="closing-remarks">Closing Remarks</h2>
+<p>It would be interesting to see how different Copilot is to Dall-E 3 in interpreting color descriptions, but if Dall-E 3 and I agree for 2/2, then I think Copilot must be pretty similar as well.</p>
+<p>After all of this, I think it’s important to note that I was not blown away or shocked by either of these colors, and it’s because I have seen them before. This means that AI cannot create new colors… at least, not with the prompt that I supplied it with this time.</p>
+<p>Thanks for tuning in!</p>
+<p>Emmy</p>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
