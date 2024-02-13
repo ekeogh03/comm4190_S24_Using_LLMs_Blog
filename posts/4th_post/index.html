@@ -6,8 +6,11 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Emmy Keogh">
+<meta name="dcterms.date" content="2024-02-12">
+<meta name="description" content="Does AI imagine a world without men or women the most productive?">
 
-<title>My Explorations with LLMs - My Explorations with LLMs (come along for a fun ride!)</title>
+<title>My Explorations with LLMs - Life without…</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,24 +26,22 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -68,77 +69,19 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
 
-    const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
-
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../../styles.css">
 </head>
 
-<body class="nav-fixed">
+<body class="nav-fixed fullcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top quarto-banner">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">My Explorations with LLMs</span>
     </a>
   </div>
@@ -149,7 +92,7 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./about.html"> 
+    <a class="nav-link" href="../../about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item compact">
@@ -172,239 +115,104 @@ window.Quarto = {
 <!-- content -->
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-page-left">
-      <h1 class="title">My Explorations with LLMs (come along for a fun ride!)</h1>
-                      </div>
+    <div class="quarto-title column-body">
+      <h1 class="title">Life without…</h1>
+                  <div>
+        <div class="description">
+          Does AI imagine a world without men or women the most productive?
+        </div>
+      </div>
+                          <div class="quarto-categories">
+                <div class="quarto-category">LLMs</div>
+                <div class="quarto-category">prompting</div>
+                <div class="quarto-category">creative</div>
+              </div>
+                  </div>
   </div>
     
   
-  <div class="quarto-title-meta column-page-left">
+  <div class="quarto-title-meta">
 
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Emmy Keogh </p>
+            </div>
+    </div>
       
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">February 12, 2024</p>
+      </div>
+    </div>
     
       
     </div>
     
   
-  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(5)</span></div><div class="category" data-category="LLMs">LLMs <span class="quarto-category-count">(5)</span></div><div class="category" data-category="creative">creative <span class="quarto-category-count">(2)</span></div><div class="category" data-category="logic">logic <span class="quarto-category-count">(3)</span></div><div class="category" data-category="prompting">prompting <span class="quarto-category-count">(5)</span></div></div></div>
+    
 <!-- main -->
-<main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
+<main class="content quarto-banner-title-block" id="quarto-document-content">
 
 
 
 
 
+<p><img src="barbie.png" width="50%"></p>
+<p>Since Barbie hit theaters last summer, I’m sure audiences have thought about how the world would be if only Kens’ existed and conversely, if only Barbies wandered the streets. Would humanity flourish with only one gender? If so, for how long? I’m interested in AI’s visual portrayal of the world without men and the world without women after 1 day, 1 year, and 10 years in the future. Let’s get started!</p>
+<p>Using Dall-E 3, I prompted the LLM to “Create an image of a city one day after all men have disappeared.”</p>
+<section id="first-attempt" class="level3">
+<h3 class="anchored" data-anchor-id="first-attempt">First Attempt</h3>
+<p>The LLM must have assumed that “men” referred to all humans (which is an interesting note for another time), because the picture it printed was quite melancholic and a man still appeared.</p>
+<p><img src="try1.png" width="50%"></p>
+<p>For the next try, I used the prompt: Create an image of a city one day after all men have disappeared, but women are alive and well.</p>
+<p><strong>I will be using this format for all the prompts ahead, i.e.&nbsp;Create an image of a city one ____ after all _____ have disappeared, but _______ are alive and well.</strong></p>
+</section>
+<section id="one-day-without-men" class="level3">
+<h3 class="anchored" data-anchor-id="one-day-without-men">One Day Without Men</h3>
+<p>This time the LLM changed its course –I think finally understanding my request– and outputted this normal city.</p>
+<p><img src="pic2.png" width="50%"></p>
+<p>I think it’s nice that the LLM even added a pretty sunset! Lights are off, so I’m sure the world is in shock wondering where all the men went.</p>
+</section>
+<section id="one-year-without-men" class="level3">
+<h3 class="anchored" data-anchor-id="one-year-without-men">One Year Without Men</h3>
+<p><img src="pic3.png" width="50%"></p>
+<p>The next image was generated with the same prompt except 1 year instead of 1 day, and it gave us a <em>very</em> similar skyline. I think something that could be interpreted from this image is no major buildings were added in the year since men left. Also, all the lights are off <em>again</em> signaling that maybe no one occupies these buildings anymore.</p>
+</section>
+<section id="years-without-men" class="level3">
+<h3 class="anchored" data-anchor-id="years-without-men">10 Years Without Men</h3>
+<p><img src="pic4.png" width="50%"></p>
+<p>This take looks the most lively. It’s as if the women moved into these buildings and started to make some changes in the last few years. This shows women have come together and that civilization survives!</p>
+</section>
+<section id="one-day-without-women" class="level3">
+<h3 class="anchored" data-anchor-id="one-day-without-women">One Day Without Women</h3>
+<p><img src="pic5.png" width="50%"></p>
+<p>I interpret this visual as a quiet city and no one knows what to do because all the women just disappeared, so they have called off the day from work.</p>
+</section>
+<section id="one-year-without-women" class="level3">
+<h3 class="anchored" data-anchor-id="one-year-without-women">One Year Without Women</h3>
+<p><img src="pic6.png" width="50%"></p>
+<p>After a year, the men are used to things and they are up and running quicker than the women were for comparison at this point in time.</p>
+</section>
+<section id="ten-years-without-women" class="level3">
+<h3 class="anchored" data-anchor-id="ten-years-without-women">Ten Years Without Women</h3>
+<p><img src="pic7.png" width="50%"></p>
+<p>I assume this dark city means that men did not find a way to repopulate the Earth, leaving the buildings dark and empty after 10 years without women.</p>
+</section>
+<section id="closing-remarks" class="level3">
+<h3 class="anchored" data-anchor-id="closing-remarks">Closing Remarks</h3>
+<p>This was an interesting exercise solely based on my curiosity with how I thought AI would deliver visuals based on gender. I guess I imagined more of a bias in terms of more technology with the men and more nature with the women or something along those lines. Either way, I think this idea could be explored more, but for now it seems like we would be best off if both Barbies and Kens stuck around!</p>
+<p>Thanks for tuning in!</p>
+<p>Emmy</p>
 
 
+</section>
 
-
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="LLMs,prompting,creative" data-listing-date-sort="1707696000000" data-listing-file-modified-sort="1707789733385" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="716">
-<div class="thumbnail">
-<p><a href="./posts/3rd_post/index.html" class="no-external"></a></p><a href="./posts/3rd_post/index.html" class="no-external">
-<p class="card-img-top"><img src="posts/3rd_post/lights.png"  class="thumbnail-image card-img"/></p>
-</a><p><a href="./posts/3rd_post/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/3rd_post/index.html" class="no-external">ROYGBIV + AI?</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/3rd_post/index.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('LLMs'); return false;">
-LLMs
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('prompting'); return false;">
-prompting
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('creative'); return false;">
-creative
-</div>
-</div>
-<div class="listing-description">
-<a href="./posts/3rd_post/index.html" class="no-external">LLMs claim they can create new colors. But can they really?</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/3rd_post/index.html" class="no-external">
-<div class="listing-date">
-Feb 12, 2024
-</div>
-<div class="listing-author">
-Emmy Keogh
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-categories="LLMs,prompting,creative" data-listing-date-sort="1707696000000" data-listing-file-modified-sort="1707789733397" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="534">
-<div class="thumbnail">
-<p><a href="./posts/4th_post/index.html" class="no-external"></a></p><a href="./posts/4th_post/index.html" class="no-external">
-<p class="card-img-top"><img src="posts/4th_post/barbie.png"  class="thumbnail-image card-img"/></p>
-</a><p><a href="./posts/4th_post/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/4th_post/index.html" class="no-external">Life without…</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/4th_post/index.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('LLMs'); return false;">
-LLMs
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('prompting'); return false;">
-prompting
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('creative'); return false;">
-creative
-</div>
-</div>
-<div class="listing-description">
-<a href="./posts/4th_post/index.html" class="no-external">Does AI imagine a world without men or women the most productive?</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/4th_post/index.html" class="no-external">
-<div class="listing-date">
-Feb 12, 2024
-</div>
-<div class="listing-author">
-Emmy Keogh
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="2" data-categories="LLMs,prompting,logic" data-listing-date-sort="1706832000000" data-listing-file-modified-sort="1707789733385" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="5">
-<div class="thumbnail">
-<p><a href="./posts/1st_post/index.html" class="no-external"></a></p><a href="./posts/1st_post/index.html" class="no-external">
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-</a><p><a href="./posts/1st_post/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/1st_post/index.html" class="no-external">My first post!</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/1st_post/index.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('LLMs'); return false;">
-LLMs
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('prompting'); return false;">
-prompting
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('logic'); return false;">
-logic
-</div>
-</div>
-<div class="listing-description">
-<a href="./posts/1st_post/index.html" class="no-external">Hopefully this works! I can’t wait to write on this blog site.</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/1st_post/index.html" class="no-external">
-<div class="listing-date">
-Feb 2, 2024
-</div>
-<div class="listing-author">
-Emmy
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="3" data-categories="LLMs,prompting,logic" data-listing-date-sort="1706832000000" data-listing-file-modified-sort="1707789733385" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="450">
-<div class="thumbnail">
-<p><a href="./posts/000_test_post/index.html" class="no-external"></a></p><a href="./posts/000_test_post/index.html" class="no-external">
-<p class="card-img-top"><img src="posts/000_test_post/gpt3-5.png"  class="thumbnail-image card-img"/></p>
-</a><p><a href="./posts/000_test_post/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/000_test_post/index.html" class="no-external">A test post</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/000_test_post/index.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('LLMs'); return false;">
-LLMs
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('prompting'); return false;">
-prompting
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('logic'); return false;">
-logic
-</div>
-</div>
-<div class="listing-description">
-<a href="./posts/000_test_post/index.html" class="no-external">An example post from a Jupyter notebook</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/000_test_post/index.html" class="no-external">
-<div class="listing-date">
-Feb 2, 2024
-</div>
-<div class="listing-author">
-An LLM User
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="4" data-categories="LLMs,prompting,logic" data-listing-date-sort="1706832000000" data-listing-file-modified-sort="1707789733385" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="255">
-<div class="thumbnail">
-<p><a href="./posts/2nd_post/index.html" class="no-external"></a></p><a href="./posts/2nd_post/index.html" class="no-external">
-<p class="card-img-top"><img src="posts/2nd_post/word_order_image.png"  class="thumbnail-image card-img"/></p>
-</a><p><a href="./posts/2nd_post/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2nd_post/index.html" class="no-external">Order Matters!</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/2nd_post/index.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('LLMs'); return false;">
-LLMs
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('prompting'); return false;">
-prompting
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('logic'); return false;">
-logic
-</div>
-</div>
-<div class="listing-description">
-<a href="./posts/2nd_post/index.html" class="no-external">LLMs need a specific order of words to register certain actions.</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/2nd_post/index.html" class="no-external">
-<div class="listing-date">
-Feb 2, 2024
-</div>
-<div class="listing-author">
-Emmy Keogh
-</div>
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
