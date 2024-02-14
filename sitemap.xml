@@ -1,27 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://ekeogh03.github.io/comm4190_S24_Using_LLMs_Blog/posts/4th_post/index.html</loc>
-    <lastmod>2024-02-13T02:05:05.987Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ekeogh03.github.io/comm4190_S24_Using_LLMs_Blog/posts/000_test_post/index.html</loc>
-    <lastmod>2024-02-13T02:05:05.975Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ekeogh03.github.io/comm4190_S24_Using_LLMs_Blog/about.html</loc>
-    <lastmod>2024-02-13T02:05:05.975Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ekeogh03.github.io/comm4190_S24_Using_LLMs_Blog/index.html</loc>
-    <lastmod>2024-02-13T02:05:05.975Z</lastmod>
-  </url>
-  <url>
     <loc>https://ekeogh03.github.io/comm4190_S24_Using_LLMs_Blog/posts/3rd_post/index.html</loc>
-    <lastmod>2024-02-13T02:05:05.975Z</lastmod>
+    <lastmod>2024-02-14T21:50:19.116Z</lastmod>
   </url>
   <url>
     <loc>https://ekeogh03.github.io/comm4190_S24_Using_LLMs_Blog/posts/2nd_post/index.html</loc>
-    <lastmod>2024-02-13T02:05:05.975Z</lastmod>
+    <lastmod>2024-02-14T21:50:19.116Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ekeogh03.github.io/comm4190_S24_Using_LLMs_Blog/posts/4th_post/index.html</loc>
+    <lastmod>2024-02-14T21:50:19.128Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ekeogh03.github.io/comm4190_S24_Using_LLMs_Blog/about.html</loc>
+    <lastmod>2024-02-14T21:50:19.112Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ekeogh03.github.io/comm4190_S24_Using_LLMs_Blog/index.html</loc>
+    <lastmod>2024-02-14T21:50:19.112Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ekeogh03.github.io/comm4190_S24_Using_LLMs_Blog/posts/000_test_post/index.html</loc>
+    <lastmod>2024-02-14T21:50:19.116Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ekeogh03.github.io/comm4190_S24_Using_LLMs_Blog/posts/5th_post/index.html</loc>
+    <lastmod>2024-02-14T21:50:19.148Z</lastmod>
   </url>
 </urlset>
