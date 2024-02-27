@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.550">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Emmy Keogh">
+<meta name="dcterms.date" content="2024-02-25">
+<meta name="description" content="Two LLMs battle it out to see which one can write the better SNL skit.">
+
+<title>My Explorations with LLMs - Spoiler Alert: Leave it to Humans!</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="nav-fixed fullcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">My Explorations with LLMs</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://twitter.com"> <i class="bi bi-twitter" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Spoiler Alert: Leave it to Humans!</h1>
+                  <div>
+        <div class="description">
+          Two LLMs battle it out to see which one can write the better SNL skit.
+        </div>
+      </div>
+                          <div class="quarto-categories">
+                <div class="quarto-category">LLMs</div>
+                <div class="quarto-category">prompting</div>
+                <div class="quarto-category">creative</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Emmy Keogh </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">February 25, 2024</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+
+<section id="im-in-a-bit-of-an-snl-phase-right-now.-and-you-know-what-im-not-mad-about-it." class="level3">
+<h3 class="anchored" data-anchor-id="im-in-a-bit-of-an-snl-phase-right-now.-and-you-know-what-im-not-mad-about-it.">I’m in a bit of an SNL phase right now. And, you know what, I’m not mad about it.</h3>
+<p>The problem I find though is that the show is only broadcast once a week, hence the <em>Saturday</em> in Saturday Night Live. And with all the breaks that the show takes, like their winter and summer months long hiatuses, I am left to rewatch the same clips from youtube over and over again.</p>
+<p>And what’s even worse is my favorite cast is part of a season that came out when I was just 2 years old. So it’s not like I have new content from the fan-favorite cast of Season 31, including Bill Hader, Seth Meyers, Fred Armisten, Andy Samberg Jason Sudeikis, and Kristen Wiig.</p>
+<p>My solution? Create it myself! But I didn’t want to just throw a prompt into ChatGPT and hope for the best. Through a ChatBot Arena, I challenged Llama 2 (Open foundation and fine-tuned chat models by Meta) and DeepSeek LLM (An advanced language model by DeepSeek) to see which one could come up with the most realistic and entertaining SNL Stefon skit.</p>
+<p><img src="stefon.png" width="50%"></p>
+<section id="dont-know-stefon" class="level4">
+<h4 class="anchored" data-anchor-id="dont-know-stefon"><em>Don’t</em> know Stefon?</h4>
+<p><a href="https://youtu.be/NctoAyRDtzU?si=z9egpnPp_TNqrVuR">Please click this to understand his specific humor and catchphrases.</a></p>
+<p>According to Saturday Night Live Wiki, Stefon’s catchphrases are - “New York’s hottest club is…” - “Yes, yes, yes!” - “If you’re…look no further.” - “This place has everything:…”</p>
+<p>When deciding which skit is most realistic I will take into account the use of his notable sayings, but in the end, the better script will come down to the understanding of comedic timing and absurd humor. To give the LLMs context, I prompted them with a few preparatory questions.</p>
+</section>
+</section>
+<section id="prompt-do-you-know-what-snl-is" class="level3">
+<h3 class="anchored" data-anchor-id="prompt-do-you-know-what-snl-is">Prompt: do you know what snl is?</h3>
+<p><strong>Llama:</strong> Yes, I do! SNL stands for Saturday Night Live, which is a late-night sketch comedy and variety show that airs on NBC in the United States. The show has been on the air since 1975 and has become a cultural phenomenon, known for its irreverent humor, satire, and parodies of current events, politics, and popular culture.</p>
+<p>The show is hosted by a rotating cast of comedians, who appear in sketches and other segments throughout the episode. The show also features musical guests, who perform songs and other musical numbers.</p>
+<p>SNL has launched the careers of many famous comedians and actors, including John Belushi, Bill Murray, Chevy Chase, Eddie Murphy, Chris Farley, Will Ferrell, Tina Fey, Amy Poehler, and Kate McKinnon, among many others. The show has won numerous awards, including Emmys and Golden Globes, and has been widely influential in shaping American popular culture.</p>
+<p><strong>DeepSeek:</strong> Yes, I am familiar with SNL. SNL is an acronym that can stand for several different things, depending on the context in which it is used. Here are a few possible meanings of SNL:</p>
+<ol type="1">
+<li>Saturday Night Live: This is a popular American late-night television sketch comedy and variety show that has been airing on NBC since 1975. The show features a variety of skits, parodies, and musical performances, and has been known for launching the careers of many famous comedians and actors.</li>
+<li>Saturday Night Live (UK): This is a British television show that is based on the American SNL format. It aired on ITV from 2010 to 2011 and featured a mix of sketches, stand-up comedy, and musical performances.</li>
+<li>Saturday Night Live (Philippines): This is a Philippine television show that is also based on the American SNL format. It aired on GMA Network from 2003 to 2008 and was known for its comedy sketches and celebrity guests.</li>
+<li>Saturday Night Live (Australia): This is an Australian television show that is based on the American SNL format. It aired on the Seven Network from 2012 to 2013 and featured a mix of comedy sketches, celebrity guests, and musical performances.</li>
+</ol>
+<p>In general, SNL is a comedy show that is known for its irreverent humor, political satire, and memorable characters.</p>
+<section id="off-the-bat-i-think-that-llama-is-going-to-deliver-a-funnier-sketch.-it-was-to-the-point-not-repetitive-and-only-included-relevant-details.-deepseek-on-the-other-hand-does-not-seem-to-have-had-enough-fine-tuning-as-the-answer-was-very-botty-and-not-so-human-like.-im-afraid-of-the-weak-jokes-it-will-deliver." class="level4">
+<h4 class="anchored" data-anchor-id="off-the-bat-i-think-that-llama-is-going-to-deliver-a-funnier-sketch.-it-was-to-the-point-not-repetitive-and-only-included-relevant-details.-deepseek-on-the-other-hand-does-not-seem-to-have-had-enough-fine-tuning-as-the-answer-was-very-botty-and-not-so-human-like.-im-afraid-of-the-weak-jokes-it-will-deliver.">Off the bat, I think that Llama is going to deliver a funnier sketch. It was to the point, not repetitive, and only included relevant details. DeepSeek on the other hand does not seem to have had enough fine tuning as the answer was very “botty” and not so human-like. I’m afraid of the weak jokes it will deliver.</h4>
+</section>
+</section>
+<section id="prompt-how-would-you-describe-snls-humor" class="level3">
+<h3 class="anchored" data-anchor-id="prompt-how-would-you-describe-snls-humor">Prompt: how would you describe SNL’s humor?</h3>
+<p><strong>Llama:</strong> Saturday Night Live (SNL) is known for its irreverent and often absurdist humor, which can be difficult to pin down or describe. However, here are some key elements that contribute to the show’s humor:</p>
+<ol type="1">
+<li>Satire and Parody: SNL frequently uses satire and parody to poke fun at current events, politics, and popular culture. Sketches often exaggerate or distort real-life situations for comedic effect.</li>
+<li>Quick-witted Writing: The show’s writers are known for their fast-paced, clever, and often absurd dialogue. Characters and sketches often feature sudden, unexpected twists and turns, keeping the audience on their toes.</li>
+<li>Physical Comedy: SNL has a long history of incorporating physical comedy into its sketches, from slapstick to more subtle, nuanced performances.</li>
+<li>Pop Culture References: The show frequently references and parodies popular culture, including movies, TV shows, music, and celebrities.</li>
+<li>Improvisation: SNL is known for its improvisational elements, with many sketches featuring unscripted moments and ad-libbed lines. This adds an extra layer of unpredictability and humor to the show.</li>
+<li>Political Humor: SNL has always been known for its political humor, often tackling controversial topics and figures in its sketches.</li>
+<li>Character-Driven Humor: Many of SNL’s sketches revolve around specific characters or archetypes, such as the “Weekend Update” anchors, the “Coneheads,” or the “Schweddy Balls” sketch. These characters often become fan favorites and are revisited throughout the show’s history.</li>
+<li>Celebrity Guests: SNL frequently features celebrity guests, who often play themselves or appear in sketches alongside the regular cast members. These appearances can add an extra layer of humor and surprise to the show.</li>
+</ol>
+<p><strong>DeepSeek:</strong> SNL’s humor is characterized by its irreverent, satirical, and topical nature. The show often uses humor to comment on current events, politics, and popular culture, and it frequently features sketches that parody famous people, movies, TV shows, and other cultural touchstones.</p>
+<p>SNL’s humor is often characterized by its use of absurdity, exaggeration, and irony, and it frequently features characters and situations that are over-the-top and exaggerated for comedic effect. The show is also known for its use of improvisation, which allows the cast to be spontaneous and creative in their performances.</p>
+<p>Overall, SNL’s humor is often described as irreverent, satirical, and topical, and it appeals to audiences who appreciate intelligent and witty comedy that can both entertain and comment on contemporary issues.</p>
+<section id="again-deepseek-continued-to-repeat-itself-i.e.-irreverent-satirical-and-topical-while-llama-delivered-me-an-organized-list-of-correct-details.-now-i-wanted-to-make-sure-they-were-going-to-use-the-correct-cast-members-so-i-verified-that-they-knew-the-cast-of-season-31." class="level4">
+<h4 class="anchored" data-anchor-id="again-deepseek-continued-to-repeat-itself-i.e.-irreverent-satirical-and-topical-while-llama-delivered-me-an-organized-list-of-correct-details.-now-i-wanted-to-make-sure-they-were-going-to-use-the-correct-cast-members-so-i-verified-that-they-knew-the-cast-of-season-31.">Again, DeepSeek continued to repeat itself (i.e.&nbsp;“irreverent, satirical, and topical”), while Llama delivered me an organized list of correct details. Now, I wanted to make sure they were going to use the correct cast members, so I verified that they knew the cast of Season 31.</h4>
+</section>
+</section>
+<section id="prompt-who-was-in-the-cast-for-season-31-of-snl" class="level3">
+<h3 class="anchored" data-anchor-id="prompt-who-was-in-the-cast-for-season-31-of-snl">Prompt: who was in the cast for season 31 of snl?</h3>
+<p><strong>Llama:</strong> Season 31 of Saturday Night Live (SNL) premiered on October 3, 2004, and featured a talented cast of actors, comedians, and impressionists. Here’s a list of the cast members for Season 31 of SNL:</p>
+<ol type="1">
+<li>Fred Armisen</li>
+<li>Will Forte</li>
+<li>Bill Hader</li>
+<li>Seth Meyers</li>
+<li>Amy Poehler</li>
+<li>Maya Rudolph</li>
+<li>Andy Samberg</li>
+<li>Jason Sudeikis</li>
+<li>Kenan Thompson</li>
+<li>Kristen Wiig</li>
+</ol>
+<p>This season also featured several guest hosts and musical guests, including:</p>
+<ul>
+<li>Hosts: Alec Baldwin, Ben Stiller, Chris Rock, David Spade, John Goodman, Josh Hartnett, Justin Timberlake, Kevin Spacey, Michael Bay, Peyton Manning, Robert De Niro, Sarah Jessica Parker, and Tim McGraw.</li>
+<li>Musical guests: 50 Cent, Alicia Keys, Arcade Fire, Ashlee Simpson, Avril Lavigne, Beyoncé, Brandy, Eminem, Gwen Stefani, John Mayer, Kanye West, Mariah Carey, OutKast, R.E.M., Red Hot Chili Peppers, Rihanna, Snoop Dogg, and Usher.</li>
+</ul>
+<p>Season 31 of SNL was notable for several reasons, including the addition of new cast members Bill Hader and Andy Samberg, who would go on to become fan favorites and long-time cast members. The season also featured several memorable moments, such as the “More Cowbell” sketch with Will Ferrell and Christopher Walken, and the “United Way” sketch with Andy Samberg and Ashton Kutcher.</p>
+<p><strong>DeepSeek:</strong> The cast for Season 31 of Saturday Night Live (SNL) included:</p>
+<ul>
+<li>Tina Fey (Host)</li>
+<li>Tracy Morgan</li>
+<li>Amy Poehler</li>
+<li>Maya Rudolph</li>
+<li>Rachel Dratch</li>
+<li>Fred Armisen</li>
+<li>Darrell Hammond</li>
+<li>Seth Meyers</li>
+<li>Amy Poehler</li>
+<li>…</li>
+<li>Cecily Strong</li>
+<li>Kate McKinnon</li>
+<li>Beck Bennett</li>
+<li>Kyle Mooney</li>
+<li>Leslie Jones</li>
+<li>Sasheer Zamata</li>
+<li>Pete Davidson</li>
+<li>Michael Che</li>
+<li>Colin Jost</li>
+</ul>
+<p>Please note that this is not an exhaustive list and there may have been additional cast members or guest stars throughout the season.</p>
+<section id="once-again-llama-pulls-through-with-a-more-succinct-description.-now-to-confirm-with-the-llm-the-specific-format-of-an-snl-skit-i-asked-for-the-blueprint-of-a-sketch." class="level4">
+<h4 class="anchored" data-anchor-id="once-again-llama-pulls-through-with-a-more-succinct-description.-now-to-confirm-with-the-llm-the-specific-format-of-an-snl-skit-i-asked-for-the-blueprint-of-a-sketch.">Once again, Llama pulls through with a more succinct description. Now to confirm with the LLM the specific format of an SNL skit, I asked for the blueprint of a sketch.</h4>
+</section>
+</section>
+<section id="prompt-what-is-the-blueprint-for-an-snl-skit" class="level3">
+<h3 class="anchored" data-anchor-id="prompt-what-is-the-blueprint-for-an-snl-skit">Prompt: what is the blueprint for an snl skit?</h3>
+<p><strong>Llama:</strong> The blueprint for an SNL skit typically includes the following elements:</p>
+<ul>
+<li>Concept: The first step in creating an SNL skit is to come up with an idea or concept. This can involve brainstorming, researching current events, or identifying a particular theme or topic to tackle. The concept should be concise, relatable, and have the potential to be funny.</li>
+<li>Characters: Once the concept is established, the next step is to create characters that can bring the idea to life. Characters should be well-defined, with distinct personalities, motivations, and quirks. They should also be relatable to the audience and have the potential to be funny.</li>
+<li>Storyline: A good SNL skit needs a clear storyline that sets up the premise and provides a structure for the comedy to unfold. The storyline should be simple, yet engaging, and should provide opportunities for the characters to interact and play off each other.</li>
+<li>Comedic elements: The next step is to identify the comedic elements that will make the skit funny. This can include things like absurdity, irony, satire, parody, stereotypes, and wordplay. The comedic elements should be integrated into the storyline and character interactions to create a seamless and hilarious experience.</li>
+<li>Dialogue: The dialogue in an SNL skit should be natural, witty, and funny. It should be tailored to each character’s personality and should advance the storyline. The dialogue should also be delivered with good timing and pacing to maximize the comedic impact.</li>
+<li>Visual elements: SNL skits often incorporate visual elements, such as props, costumes, and sets, to enhance the comedy. The visual elements should be clever, creative, and add to the overall humor of the skit.</li>
+<li>Pacing: The pacing of an SNL skit is crucial to its success. The skit should have a good rhythm, with moments of tension, release, and surprise. The pacing should also be tailored to the audience’s attention span and should keep them engaged throughout the skit.</li>
+<li>Rehearsal: Before the skit is performed live, the cast and crew will typically rehearse it several times to fine-tune the performance. Rehearsals help identify areas that need improvement, such as timing, pacing, and delivery.</li>
+<li>Performance: The final step is to perform the skit in front of a live audience. The cast and crew will work together to bring the skit to life, using their skills and experience to create a hilarious and entertaining experience for the audience. By following these steps, SNL writers and performers can create a blueprint for a successful skit that will leave audiences laughing and entertained.</li>
+</ul>
+<p><strong>DeepSeek:</strong> The blueprint for an SNL sketch typically includes the following elements:</p>
+<ul>
+<li>Concept: The sketch begins with a central concept or idea, which serves as the basis for the humor and action in the sketch.</li>
+<li>Characters: The sketch typically features a set of characters, each with their own unique personality and traits.</li>
+<li>Setup: The sketch is set up with a brief introduction or premise, which establishes the situation and characters.</li>
+<li>Action: The sketch then follows a series of actions or events, which build upon the setup and lead to the punchline or climax.</li>
+<li>Punchline: The sketch concludes with a punchline or unexpected twist, which provides the comedic payoff and leaves the audience laughing.</li>
+<li>Timing: The sketch is carefully timed and edited to maximize the comedic effect and keep the audience engaged.</li>
+<li>Music and Sound Effects: Music and sound effects are often used to enhance the humor and set the tone of the sketch.</li>
+<li>Guest Stars: SNL often features guest stars, who add a fresh perspective and energy to the sketch.</li>
+</ul>
+<p>Overall, the blueprint for an SNL sketch is a carefully crafted combination of concept, characters, setup, action, punchline, timing, music and sound effects, and guest stars.</p>
+<section id="interestingly-the-first-sentence-and-the-first-two-bullet-points-of-the-texts-were-virtually-the-same.-i-actually-think-deepseeks-response-is-better-in-this-context-short-and-sweet.-i-worry-about-the-llm-juggling-so-many-factors-in-llamas-response.-at-last-i-have-prepped-my-llms-enough-its-time-for-the" class="level4">
+<h4 class="anchored" data-anchor-id="interestingly-the-first-sentence-and-the-first-two-bullet-points-of-the-texts-were-virtually-the-same.-i-actually-think-deepseeks-response-is-better-in-this-context-short-and-sweet.-i-worry-about-the-llm-juggling-so-many-factors-in-llamas-response.-at-last-i-have-prepped-my-llms-enough-its-time-for-the">Interestingly, the first sentence and the first two bullet points of the texts were virtually the same. I actually think DeepSeek’s response is better in this context– short and sweet. I worry about the LLM juggling so many factors in Llama’s response. At last, I have prepped my LLMs enough! It’s time for the</h4>
+<pre><code>Weekend Update on SATURDAY NIGHT LIVE!!!</code></pre>
+</section>
+</section>
+<section id="prompt-make-a-weekend-update-snl-skit-script-with-a-stefon-act-played-by-bill-hader.-follow-the-same-format-and-joke-style-as-the-show-normally-does-but-make-it-creative-and-new-do-not-repeat-any-old-jokes-from-the-show." class="level3">
+<h3 class="anchored" data-anchor-id="prompt-make-a-weekend-update-snl-skit-script-with-a-stefon-act-played-by-bill-hader.-follow-the-same-format-and-joke-style-as-the-show-normally-does-but-make-it-creative-and-new-do-not-repeat-any-old-jokes-from-the-show.">Prompt: Make a weekend update snl skit script with a Stefon act played by Bill Hader. Follow the same format and joke style as the show normally does, but make it creative and new (do not repeat any old jokes from the show).</h3>
+<p><strong>Llama:</strong> Sure, here’s a script for a Weekend Update segment featuring Stefon, played by Bill Hader:</p>
+<p>[Weekend Update theme music plays]</p>
+<p>Announcer: Welcome back to Weekend Update, the only news program that’s not afraid to tackle the tough issues. And now, here’s our city correspondent, Stefon, played by Bill Hader.</p>
+<p>[Stefon enters, wearing a flamboyant outfit and a confident smile]</p>
+<p>Stefon: Thank you, thank you! It’s great to be back, folks! I’ve got some fantastic news for you. Did you hear about the new club that just opened up in the city? It’s called “Club Bangerz” and let me tell you, it’s the place to be! They’ve got a DJ spinning nothing but the hottest tracks, and the dance floor is packed with people showing off their best moves.</p>
+<p>[Stefon takes a sip from an imaginary coffee cup]</p>
+<p>Stefon: But that’s not all, folks! I’ve also got some juicy gossip for you. I heard that the mayor’s son was spotted at Club Bangerz, getting a little too cozy with one of the strippers. Scandal!</p>
+<p>[Stefon leans in, a conspiratorial look on his face]</p>
+<p>Stefon: And if that’s not enough, I’ve got some breaking news for you. I just got word that a group of chickens have taken over the city’s main power grid. That’s right, folks, the chickens are in charge now!</p>
+<p>[Stefon stands up, looking serious for a moment]</p>
+<p>Stefon: But don’t worry, the city’s officials are on it. They’re working around the clock to negotiate with the chickens and get the power back on. I mean, who knows what kind of demands they’re going to make? Maybe they want more corn? Or a better healthcare plan?</p>
+<p>[Stefon sits back down, smiling]</p>
+<p>Stefon: And finally, I’ve got some exciting news for all you foodies out there. There’s a new restaurant in town that’s serving up the most delicious dishes you’ve ever tasted. It’s called “Bistro Bizarre” and let me tell you, it’s a real treat. They’ve got dishes like “Flaming Fajitas” and “Chicken Tikka Tacos” and… wait for it… “Cheetos Crusted Cheesecake”!</p>
+<p>[Stefon leans in, a mischievous look on his face]</p>
+<p>Stefon: But that’s not all, folks! I heard that if you order the “Bizarre Bento Box” and say the secret password, you’ll get a special surprise. I’m not sure what it is, but I heard it’s something like a “Flaming Ferris Wheel Fajita Frenzy”!</p>
+<p>[Stefon stands up, holding up an imaginary Bento Box]</p>
+<p>Stefon: So there you have it, folks, another week in the city. Stay weird, stay wild, and remember, always order the Bizarre Bento Box.</p>
+<p>[Weekend Update theme music plays as Stefon exits]</p>
+<p>Announcer: That’s Stefon, played by Bill Hader. Tune in next week for more news from the city.</p>
+<ul>
+<li><p>Pros of Llama: “here’s our city correspondent, Stefon,”</p></li>
+<li><p>Cons of Llama: “played by Bill Hader”, [Stefon takes a sip from an imaginary coffee cup] (out of character), everything past that script command… just so out of character</p></li>
+</ul>
+<p><strong>DeepSeek:</strong> Sure, here’s a Weekend Update SNL skit script featuring Stefon played by Bill Hader:</p>
+<p>Anchor: “Welcome back to Weekend Update, I’m [insert anchor’s name]. Joining us now is our nightlife correspondent, Stefon.”</p>
+<p>Stefon: “Hey, what’s up guys? It’s Stefon, and I’ve got the hottest club in town for you tonight. It’s called ‘The Catacomb of Eternal Darkness’.”</p>
+<p>Anchor: “The Catacomb of Eternal Darkness? That sounds…intense.”</p>
+<p>Stefon: “Oh, it is. It’s in the basement of an old haunted house, and you have to crawl through a narrow tunnel to get in. But once you’re inside, it’s like a whole new world. The walls are dripping with slime, and there are creatures lurking in the shadows.”</p>
+<p>Anchor: “Creatures?”</p>
+<p>Stefon: “Yeah, like giant spiders and snakes and…oh my god, is that a velociraptor?”</p>
+<p>Anchor: “A velociraptor?!”</p>
+<p>Stefon: “Yeah, and get this: the DJ is a giant tarantula. He spins records with his eight legs, and he only plays the darkest, most evil music you’ve ever heard.”</p>
+<p>Anchor: “I don’t know if I’m ready for that, Stefon.”</p>
+<p>Stefon: “Oh, come on, it’s the coolest club in town. And the best part is, the bouncers are all zombies. They’ll let you in for free if you give them a bite of your ear.”</p>
+<p>Anchor: “I’m not sure I want to give a zombie a bite of my ear, Stefon.”</p>
+<p>Stefon: “Trust me, it’s worth it. And the drinks are to die for - literally. They’re made with blood and eye of newt and all sorts of stuff. You’ll love it.”</p>
+<p>Anchor: “I don’t know, Stefon. It sounds a little…dangerous.”</p>
+<p>Stefon: “Oh, it is. But that’s what makes it so amazing. Trust me, you’ll never forget the night you spent at ‘The Catacomb of Eternal Darkness’.”</p>
+<p>Anchor: “I’ll think about it, Stefon. Thanks for the tip.”</p>
+<p>Stefon: “No problem. See you at the club!”</p>
+<p>Anchor: “I don’t think so, Stefon. Thanks for joining us, and we’ll be right back.”</p>
+<ul>
+<li><p>Pros of DeepSeek: “the hottest club in town”</p></li>
+<li><p>Cons of DeepSeek: not very funny, but much closer the SNL sketches on YouTube</p></li>
+</ul>
+</section>
+<section id="reflections" class="level3">
+<h3 class="anchored" data-anchor-id="reflections">Reflections</h3>
+<p>Both of these sketches suck!!! I was wrong though and DeepSeek actually presented a more accurate Stefon sketch. Either way, let’s leave it to humans to write the comedy, not some large language models. I’ll stick to throwback videos on YouTube for now!</p>
+<p>Thanks for tuning in!</p>
+<p>Emmy</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
