@@ -1,35 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://ekeogh03.github.io/comm4190_S24_Using_LLMs_Blog/index.html</loc>
+    <lastmod>2024-03-14T14:59:29.180Z</lastmod>
+  </url>
+  <url>
     <loc>https://ekeogh03.github.io/comm4190_S24_Using_LLMs_Blog/posts/3rd_post/index.html</loc>
-    <lastmod>2024-02-27T19:32:30.826Z</lastmod>
+    <lastmod>2024-03-14T14:59:29.180Z</lastmod>
   </url>
   <url>
     <loc>https://ekeogh03.github.io/comm4190_S24_Using_LLMs_Blog/posts/2nd_post/index.html</loc>
-    <lastmod>2024-02-27T19:32:30.826Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ekeogh03.github.io/comm4190_S24_Using_LLMs_Blog/posts/4th_post/index.html</loc>
-    <lastmod>2024-02-27T19:32:30.842Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ekeogh03.github.io/comm4190_S24_Using_LLMs_Blog/index.html</loc>
-    <lastmod>2024-02-27T19:32:30.826Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ekeogh03.github.io/comm4190_S24_Using_LLMs_Blog/about.html</loc>
-    <lastmod>2024-02-27T19:32:30.826Z</lastmod>
+    <lastmod>2024-03-14T14:59:29.180Z</lastmod>
   </url>
   <url>
     <loc>https://ekeogh03.github.io/comm4190_S24_Using_LLMs_Blog/posts/7th_post/index.html</loc>
-    <lastmod>2024-02-27T19:32:30.882Z</lastmod>
+    <lastmod>2024-03-14T14:59:29.236Z</lastmod>
   </url>
   <url>
-    <loc>https://ekeogh03.github.io/comm4190_S24_Using_LLMs_Blog/posts/6th_post/index.html</loc>
-    <lastmod>2024-02-27T19:32:30.866Z</lastmod>
+    <loc>https://ekeogh03.github.io/comm4190_S24_Using_LLMs_Blog/posts/8th_post/index.html</loc>
+    <lastmod>2024-03-14T14:59:29.268Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ekeogh03.github.io/comm4190_S24_Using_LLMs_Blog/posts/4th_post/index.html</loc>
+    <lastmod>2024-03-14T14:59:29.196Z</lastmod>
   </url>
   <url>
     <loc>https://ekeogh03.github.io/comm4190_S24_Using_LLMs_Blog/posts/5th_post/index.html</loc>
-    <lastmod>2024-02-27T19:32:30.862Z</lastmod>
+    <lastmod>2024-03-14T14:59:29.216Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ekeogh03.github.io/comm4190_S24_Using_LLMs_Blog/posts/6th_post/index.html</loc>
+    <lastmod>2024-03-14T14:59:29.216Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ekeogh03.github.io/comm4190_S24_Using_LLMs_Blog/about.html</loc>
+    <lastmod>2024-03-14T14:59:29.180Z</lastmod>
   </url>
 </urlset>
