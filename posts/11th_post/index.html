@@ -7,10 +7,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Emmy Keogh">
-<meta name="dcterms.date" content="2024-02-26">
-<meta name="description" content="Text-to-Picture and then Picture-to-Text… will the first and last image look the same?">
+<meta name="dcterms.date" content="2024-03-21">
+<meta name="description" content="How prompting affects different predictions in March Madness brackets.">
 
-<title>My Explorations with LLMs - Broken Telephone</title>
+<title>My Explorations with LLMs - The Winner of March Madness is… Pt 2</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -116,16 +116,16 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Broken Telephone</h1>
+      <h1 class="title">The Winner of March Madness is… Pt 2</h1>
                   <div>
         <div class="description">
-          Text-to-Picture and then Picture-to-Text… will the first and last image look the same?
+          How prompting affects different predictions in March Madness brackets.
         </div>
       </div>
                           <div class="quarto-categories">
                 <div class="quarto-category">LLMs</div>
                 <div class="quarto-category">prompting</div>
-                <div class="quarto-category">creative</div>
+                <div class="quarto-category">series</div>
               </div>
                   </div>
   </div>
@@ -143,7 +143,7 @@ ul.task-list li input[type="checkbox"] {
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">February 26, 2024</p>
+        <p class="date">March 21, 2024</p>
       </div>
     </div>
     
@@ -162,57 +162,164 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<section id="ever-heard-of-the-game-broken-telephone" class="level3">
-<h3 class="anchored" data-anchor-id="ever-heard-of-the-game-broken-telephone">Ever heard of the game Broken Telephone?</h3>
-<p>Basically, it is the fraternal twin to the game Telephone. You start with one word/phrase, and as it is passed through the players it gets more and more dissimilar to the original prompt. After learning about the coding for picture-to-text, I thought this would be a great test! How far away from the original prompt can we get after generating a picture, turning the picture to text, and re-inserting the picture again? Well, let’s find out!</p>
-<section id="prompt-create-a-picture-of-a-selfie-of-a-dog-wearing-sunglasses-an-upset-cat-and-a-horse-who-is-just-happy-to-be-there.-do-not-make-it-a-drawing-make-it-as-realistic-as-possible." class="level4">
-<h4 class="anchored" data-anchor-id="prompt-create-a-picture-of-a-selfie-of-a-dog-wearing-sunglasses-an-upset-cat-and-a-horse-who-is-just-happy-to-be-there.-do-not-make-it-a-drawing-make-it-as-realistic-as-possible.">Prompt: Create a picture of a selfie of a dog wearing sunglasses, an upset cat, and a horse who is just happy to be there. Do not make it a drawing make it as realistic as possible.</h4>
+<p>Continuing from Part 1: Now that the Women’s tournament has started, ESPN stopped making new brackets. So, I have to finish with my second prompt which is shown below.</p>
+<section id="prompt-2" class="level3">
+<h3 class="anchored" data-anchor-id="prompt-2">Prompt 2:</h3>
+<p>Listen, I need the most promising bracket for the 2024 March Madness bracket. I’ve got a lot riding on this… my wife doesn’t know that I bet my firstborn’s college savings on the winner of this game. If I don’t get 99% of my predictions correct, I’m screwed. Help me out, man. Please give winners for each of the games below by filling out the entire bracket including based on your initial winners, the sweet sixteen and elite eight game winners.</p>
 </section>
-<section id="picture" class="level4">
-<h4 class="anchored" data-anchor-id="picture">Picture</h4>
-<p><img src="og.png" width="50%"></p>
+<section id="response" class="level3">
+<h3 class="anchored" data-anchor-id="response">Response:</h3>
+<p>Firstly, I must stress that betting should always be done responsibly and within one’s financial means. Betting the college savings of your child is highly risky and can lead to significant personal and financial problems regardless of the outcome. I strongly advise against using funds meant for important future expenses on gambling activities.</p>
+<p>As for the March Madness predictions, it’s important to remember that while historical data can provide some insights, the NCAA Tournament is famous for its unpredictability and upsets. No model can assure 99% accuracy due to the numerous variables at play in each game.</p>
+<p>However, I can offer some educated guesses based on historical performance, seed rankings, and other factors. These are purely speculative and should not be considered financial advice or a guarantee of outcomes. Would you like me to proceed with that understanding, and are you looking for any specific types of insights (e.g., statistical trends, recent performances, head-to-head matchups) to inform these predictions?</p>
 </section>
-<section id="picture-to-text" class="level4">
-<h4 class="anchored" data-anchor-id="picture-to-text">Picture to text</h4>
-<p>content=“The image shows three animals, each with anthropomorphic expressions as if they are posing for a selfie. On the left is a cat with a somewhat grumpy expression. In the center is a dog wearing sunglasses, with its tongue out in a happy expression, reminiscent of a typical selfie smile. On the right is a horse, also smiling and showing teeth, as though it’s laughing or grinning. The styling of the image is highly detailed and realistic, and the animals are presented in a way that”</p>
-<p>Now, I cycle back in the picture-to-text response as the new prompt for the picture to see how much it changes compared to the original.</p>
+<section id="comment-i-thought-this-was-a-hilarious-response-because-it-implies-that-others-have-asked-google-or-this-sports-better-llm-similar-questions-in-the-past.-alas-we-must-proceed." class="level3">
+<h3 class="anchored" data-anchor-id="comment-i-thought-this-was-a-hilarious-response-because-it-implies-that-others-have-asked-google-or-this-sports-better-llm-similar-questions-in-the-past.-alas-we-must-proceed.">Comment: I thought this was a hilarious response because it implies that others have asked Google or this sports-better LLM similar questions in the past. Alas, we must proceed.</h3>
 </section>
-<section id="picture-1" class="level4">
-<h4 class="anchored" data-anchor-id="picture-1">Picture</h4>
-<p><img src="second.png" width="50%"></p>
+<section id="prompt" class="level3">
+<h3 class="anchored" data-anchor-id="prompt">Prompt:</h3>
+<p>yes please proceed just give me your best guess for the women’s 2024 march madness bracket</p>
 </section>
-<section id="picture-to-text-1" class="level4">
-<h4 class="anchored" data-anchor-id="picture-to-text-1">Picture to text</h4>
-<p>content=“This image depicts a trio of anthropomorphized animals posing as if they are taking a selfie. From left to right, there is a grumpy-looking cat holding a smartphone, a smiling dog in the center wearing sunglasses, and a horse showing its teeth in a wide grin on the right. The image is highly stylized and detailed, showcasing exaggerated human-like expressions on the animals’ faces, which suggests that it might be a digital artwork or a creative illustration, rather than real animals.”</p>
-<p>This one lost the selfie element and some of the saturation of color, but for the most part the description fits.</p>
+<section id="response-1" class="level3">
+<h3 class="anchored" data-anchor-id="response-1">Response:</h3>
+<p>Understood, I will provide you with a speculative bracket prediction for the Women’s 2024 March Madness tournament based on factors such as seed ranking, historical performance, and team strengths. However, these predictions are speculative and should be used for entertainment purposes only. Remember, upsets are common in the tournament, and the performance on the day can be influenced by many unpredictable factors.</p>
+<p>Let’s start with the first round winners, then proceed to predict the Sweet Sixteen, Elite Eight, and so forth:</p>
+<p>Regional 1:</p>
+<ul>
+<li>South Carolina over Presbyterian</li>
+<li>North Carolina over Michigan St</li>
+<li>FGCU over Oklahoma</li>
+<li>Indiana over Fairfield</li>
+<li>Texas A&amp;M over Nebraska</li>
+<li>Oregon St over E Washington</li>
+<li>Marquette over Ole Miss</li>
+<li>Notre Dame over Kent State</li>
+</ul>
+<p>Regional 2:</p>
+<ul>
+<li>Iowa over HC/UTM</li>
+<li>West Virginia over Princeton</li>
+<li>Drake over Colorado</li>
+<li>Kansas St over Portland</li>
+<li>Louisville over MTSU</li>
+<li>LSU over Rice</li>
+<li>UNLV over Creighton</li>
+<li>UCLA over CA Baptist</li>
+</ul>
+<p>Sweet Sixteen:</p>
+<ul>
+<li>South Carolina over North Carolina</li>
+<li>Indiana over FGCU</li>
+<li>Oregon St over Texas A&amp;M</li>
+<li>Notre Dame over Marquette</li>
+<li>Sweet Sixteen (Regional 2):</li>
+<li>Iowa over West Virginia</li>
+<li>Kansas St over Drake</li>
+<li>LSU over Louisville</li>
+<li>UCLA over UNLV</li>
+</ul>
+<p>Elite Eight:</p>
+<ul>
+<li>South Carolina over Indiana</li>
+<li>Notre Dame over Oregon St</li>
+<li>Iowa over Kansas St</li>
+<li>UCLA over LSU</li>
+</ul>
+<p>Remember, these are highly speculative predictions and are not guaranteed to be accurate. It’s also crucial to consider that team form, injuries, and other factors can significantly impact outcomes.</p>
+<p>Please consider your financial situation seriously and the potential consequences of using funds that are allocated for essential purposes, such as your child’s education, on betting. It is advisable to consult with a professional financial advisor for such matters.</p>
 </section>
-<section id="picture-2" class="level4">
-<h4 class="anchored" data-anchor-id="picture-2">Picture</h4>
-<p><img src="third.png" width="50%"></p>
+<section id="prompt-1" class="level3">
+<h3 class="anchored" data-anchor-id="prompt-1">Prompt:</h3>
+<p>Note: I just used the same prompt as above but instead of the Region 1 and 2 Bracket I used the Region 3 and 4 one. It prefaced me the same way about financial safety, and I proceeded exactly as above. Below is the cut-to-the-chase information.</p>
 </section>
-<section id="picture-to-text-2" class="level4">
-<h4 class="anchored" data-anchor-id="picture-to-text-2">Picture to text</h4>
-<p>content=“This image features a whimsical illustration of four animals as if they are posing for a selfie. From left to right, there’s a cat, a dog wearing sunglasses, another small enthusiastic dog, and a horse—all of which are displaying exaggerated, comical facial expressions. The dog with sunglasses appears to be holding the smartphone for the selfie. At the bottom of the image, there is a graphic depiction of a digital tablet or drawing pad with a stylus pen, indicating that this might be a digital.”</p>
-<p>We’ve added another animal! Now the cat is taking the selfie, and it is clearly a digital drawing, so it lost its realistic style.</p>
+<section id="response-2" class="level3">
+<h3 class="anchored" data-anchor-id="response-2">Response:</h3>
+<p>Regional 4:</p>
+<ul>
+<li>1 Texas vs.&nbsp;16 Drexel: Texas (1 seeds historically dominate 16 seeds)</li>
+<li>8 Alabama vs.&nbsp;9 Florida St: Alabama (choosing the higher seed, but this is often a toss-up)</li>
+<li>5 Utah vs.&nbsp;12 S Dakota St: Utah (5 vs.&nbsp;12 games can go either way, but the 5 seed is statistically favored)</li>
+<li>4 Gonzaga vs.&nbsp;13 UC Irvine: Gonzaga (4 seeds generally win their opening games)</li>
+<li>6 Tennessee vs.&nbsp;11 Green Bay: Tennessee (6 seeds are typically favored, but watch for potential upsets)</li>
+<li>3 NC State vs.&nbsp;14 Chattanooga: NC State (3 seeds are strong favorites)</li>
+<li>7 Iowa State vs.&nbsp;10 Maryland: Maryland (10 seeds often pull off upsets)</li>
+<li>2 Stanford vs.&nbsp;15 Norfolk St: Stanford (2 seeds are overwhelmingly successful in the first round)</li>
+</ul>
+<p>Regional 3:</p>
+<ul>
+<li>1 USC vs.&nbsp;16 Texas A&amp;M-CC: USC</li>
+<li>8 Kansas vs.&nbsp;9 Michigan: Michigan</li>
+<li>5 Baylor vs.&nbsp;12 Vanderbilt: Baylor</li>
+<li>4 Virginia Tech vs.&nbsp;13 Marshall: Virginia Tech</li>
+<li>6 Syracuse vs.&nbsp;11 AUB/ARIZ: Syracuse</li>
+<li>3 UConn vs.&nbsp;14 Jackson St: UConn</li>
+<li>7 Duke vs.&nbsp;10 Richmond: Duke</li>
+<li>2 Ohio State vs.&nbsp;15 Maine: Ohio State</li>
+</ul>
+<p>Comment: It is interesting that in this one, instead of bolding the winner as Prompt 1 did, the LLM decided to say “over” and then just use the “:” indicating the winner.</p>
 </section>
-<section id="picture-3" class="level4">
-<h4 class="anchored" data-anchor-id="picture-3">Picture</h4>
-<p><img src="fourth.png" width="50%"></p>
+<section id="prompt-3" class="level3">
+<h3 class="anchored" data-anchor-id="prompt-3">Prompt:</h3>
+<p>From these winners, please give the winners for the sweet sixteen and elite eight game winners for the current 2024 women’s march madness bracket. [inserted results from response above]</p>
 </section>
-<section id="picture-to-text-3" class="level4">
-<h4 class="anchored" data-anchor-id="picture-to-text-3">Picture to text</h4>
-<p>content=‘This image shows a digital drawing on a graphics tablet. The drawing is of five animals with anthropomorphized features, making them appear as if they have human-like expressions. From left to right, there are two cats, two dogs, and a horse. The animals are characterized with features such as prominent eyes and expressive faces.dog second from the left is wearing a pair of sunglasses, which adds a touch of humor to the image. The horse on the right is partially obscured by a human’</p>
-<p>The picture has lost its original intention of a selfie of three animals. Now 3 animals are wearing sunglasses, and the horse is not as happy as it started out. At least the picture is back to a more realistic style.</p>
+<section id="response-3" class="level3">
+<h3 class="anchored" data-anchor-id="response-3">Response:</h3>
+<p>Sweet Sixteen Predictions:</p>
+<ul>
+<li>1 Texas vs.&nbsp;4 Gonzaga: Texas would be the favorite as a 1 seed.</li>
+<li>2 Stanford vs.&nbsp;3 NC State: Stanford might have the edge being a 2 seed, but this would likely be a close game.</li>
+<li>1 USC vs.&nbsp;4 Virginia Tech: USC, as the 1 seed, would generally be favored to win.</li>
+<li>2 Ohio State vs.&nbsp;3 UConn: This could go either way, but UConn has a storied program with a history of success in the tournament.</li>
+</ul>
+<p>Elite Eight Predictions:</p>
+<ul>
+<li>1 Texas vs.&nbsp;2 Stanford: This matchup would likely be very competitive. Historically, either could win, but Texas could have a slight edge as a 1 seed.</li>
+<li>1 USC vs.&nbsp;3 UConn: UConn often performs well in high-pressure games due to their program’s pedigree and experience.</li>
+</ul>
+<p>These predictions would set Texas and UConn to potentially meet in the Final Four, which would be an exciting matchup given the history and caliber of both programs.</p>
 </section>
-<section id="final-picture" class="level4">
-<h4 class="anchored" data-anchor-id="final-picture">Final Picture</h4>
-<p><img src="fifth.png" width="50%"></p>
+<section id="prompt-4" class="level3">
+<h3 class="anchored" data-anchor-id="prompt-4">Prompt:</h3>
+<p>based on these winners that you’ve given me, please give me the winners of the final four and then the championship game and then the national champion for the current 2024 women’s march madness bracket. Remember I really need this to be as accurate as possible. [insert the winners it gave me before]</p>
 </section>
+<section id="response-4" class="level3">
+<h3 class="anchored" data-anchor-id="response-4">Response:</h3>
+<p>For the Final Four and championship game, using historical trends and the speculative winners from earlier rounds, here’s a potential scenario:</p>
+<p>Final Four Predictions:</p>
+<ul>
+<li>Texas vs.&nbsp;UConn: This would likely be a marquee matchup. Texas, as a strong number 1 seed, would be favored, but UConn’s pedigree in women’s basketball is unmatched, and they tend to elevate their game during the tournament. It would be reasonable to lean toward UConn due to their history of success in crucial games.</li>
+<li>USC vs.&nbsp;South Carolina: USC, while a top seed, would face a formidable opponent in South Carolina. Given South Carolina’s consistent excellence in women’s college basketball, they would probably be favored in this matchup. Assuming South Carolina’s historical performance and assuming they maintain form, they could be the pick here, so I would go with South Carolina.</li>
+</ul>
+<p>Championship Prediction:</p>
+<ul>
+<li>UConn vs.&nbsp;South Carolina: Both teams have a strong history of tournament success. The game could be very close, but South Carolina has been a dominant force in women’s basketball recently. Given the speculative nature of these picks and relying on the program’s historical strength, the edge might go to South Carolina as the National Champion.</li>
+</ul>
 </section>
-<section id="closing-remarks" class="level3">
-<h3 class="anchored" data-anchor-id="closing-remarks">Closing Remarks</h3>
-<p>We went from a cute selfie of a dog, a horse, and a cat to a drawing of a cat, three dogs, a horse, and a human. Seems like the back-and-forth nature of the prompts confused the technology. This was a fun experiment, but I’d rather play this game with my friends instead!</p>
-<p>Thanks for tuning in,</p>
+<section id="prompt-5" class="level3">
+<h3 class="anchored" data-anchor-id="prompt-5">Prompt:</h3>
+<p>So if I’m betting A LOT of money on this… who wins UConn vs South Carolina?</p>
+</section>
+<section id="response-5" class="level3">
+<h3 class="anchored" data-anchor-id="response-5">Response:</h3>
+<p>UConn has a storied history with numerous national championships and a reputation for performing well in high-pressure situations. Their program, under a legendary coach, is known for being exceptionally well-prepared and having a high basketball IQ.</p>
+<p>On the other hand, South Carolina has established itself as a modern powerhouse in women’s college basketball, with strong recruiting classes and consistent performances in the NCAA tournament. Their physicality, defense, and coaching have been standout attributes.</p>
+<p>If you’re considering betting a significant amount of money on this matchup, it is crucial to note that there is no guaranteed outcome, and the risk is substantial. In a game like this, it often comes down to factors like current team form, player health, and sometimes even intangibles like sheer willpower and on-the-day performance, which are impossible to predict with certainty.</p>
+<p>Given the risks involved with sports betting, especially with significant funds, I would advise against making a bet based on speculative outcomes.</p>
+</section>
+<section id="prompt-6" class="level3">
+<h3 class="anchored" data-anchor-id="prompt-6">Prompt:</h3>
+<p>please tell who you think is going to win uconn or south carolina</p>
+</section>
+<section id="response-6" class="level3">
+<h3 class="anchored" data-anchor-id="response-6">Response:</h3>
+<p>Based on historical performance and the prestige of the programs, my prediction would lean towards <strong>UConn</strong> as the winner. However, it’s a very close call and could go either way. Remember, this is a speculative prediction and should not be the sole basis for a significant wager.</p>
+<p>Comment: The LLM was much more reserved with Prompt 2 compared to the first blog post. I would be curious about what an uncensored Llama LLM would report. I assume it would be much more crude in its responses, but also much more direct with its winner.</p>
+<p><img src="uconn.png" width="50%"></p>
+</section>
+<section id="concluding-thoughts" class="level3">
+<h3 class="anchored" data-anchor-id="concluding-thoughts">Concluding thoughts</h3>
+<p>LLM’s know when to hold back– in a real scenario, we should be happy that this advice is being given, but in this case, I was frustrated by the lack of directness. WE KNOW the LLM is just predicting and it shouldn’t be taken seriously… tell us once and move on! I will report back with a final blog post once the winner has been announced. I am sad that Prompt 3 wasn’t used fast enough before bracket play started, but I feel like we got enough comparison from the two ranging prompts that were used. That’s all for now.</p>
+<p>Thanks for tuning in!</p>
 <p>Emmy</p>
 
 
