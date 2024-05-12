@@ -5,4 +5,4 @@ about:
   template: jolla
 ---
 
-About this blog I'm having fun learning about LLM systems and I'm writing here to discuss my observations !!!!!
+Welcome to my blog site! I'm just having fun learning about LLM systems and writing here to discuss my observations!
